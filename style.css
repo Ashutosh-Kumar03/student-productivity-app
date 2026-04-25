@@ -59,3 +59,27 @@ li {
   padding: 5px;
   border-radius: 4px;
 }
+
+.controls {
+  margin-bottom: 20px;
+}
+
+.filters button {
+  margin: 5px;
+  padding: 8px;
+  background: #334155;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  background: #475569;
+}
+
+.clear-btn {
+  margin-top: 10px;
+  background: red;
+  color: white;
+}

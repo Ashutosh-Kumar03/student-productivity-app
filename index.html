@@ -18,6 +18,18 @@
       <button onclick="addTask()">Add Task</button>
     </div>
 
+    <div class="controls">
+  <input type="text" id="searchInput" placeholder="Search task..." onkeyup="renderTasks()" />
+
+  <div class="filters">
+    <button onclick="setFilter('all')">All</button>
+    <button onclick="setFilter('pending')">Pending</button>
+    <button onclick="setFilter('completed')">Completed</button>
+  </div>
+
+  <button onclick="clearAll()" class="clear-btn">Clear All</button>
+</div>
+
     <ul id="taskList"></ul>
   </div>
 

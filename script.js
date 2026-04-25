@@ -29,9 +29,15 @@ function addTask() {
 
 function renderTasks() {
   const taskList = document.getElementById("taskList");
+  const searchValue = document.getElementById("searchInput").value.toLowerCase();
+
   taskList.innerHTML = "";
 
   tasks.forEach((task, index) => {
+    if (filter === "completed" && !task.completed) return;
+    if (filter === "pending" && task.completed) return;
+    if (!task.text.toLowerCase().includes(searchValue)) return;
+
     const li = document.createElement("li");
 
     li.innerHTML = `
@@ -63,3 +69,16 @@ function deleteTask(index) {
 }
 
 renderTasks();
+
+let filter = "all";
+
+function setFilter(type) {
+  filter = type;
+  renderTasks();
+}
+
+function clearAll() {
+  tasks = [];
+  saveTasks();
+  renderTasks();
+}
