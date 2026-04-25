@@ -23,10 +23,10 @@
   <input type="text" id="searchInput" placeholder="Search task..." onkeyup="renderTasks()" />
 
   <div class="filters">
-    <button onclick="setFilter('all')">All</button>
-    <button onclick="setFilter('pending')">Pending</button>
-    <button onclick="setFilter('completed')">Completed</button>
-  </div>
+  <button class="all-btn" onclick="setFilter('all')">All</button>
+  <button class="pending-btn" onclick="setFilter('pending')">Pending</button>
+  <button class="completed-btn" onclick="setFilter('completed')">Completed</button>
+</div>
 
   <button onclick="clearAll()" class="clear-btn">Clear All</button>
 </div>

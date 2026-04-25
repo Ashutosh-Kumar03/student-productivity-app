@@ -76,6 +76,21 @@ let filter = "all";
 
 function setFilter(type) {
   filter = type;
+
+  // remove active from all
+  document.querySelectorAll(".filters button").forEach(btn => {
+    btn.classList.remove("active-filter");
+  });
+
+  // add active to clicked
+  if (type === "all") {
+    document.querySelector(".all-btn").classList.add("active-filter");
+  } else if (type === "pending") {
+    document.querySelector(".pending-btn").classList.add("active-filter");
+  } else {
+    document.querySelector(".completed-btn").classList.add("active-filter");
+  }
+
   renderTasks();
 }
 
@@ -112,3 +127,4 @@ function editTask(index) {
     renderTasks();
   }
 }
+setFilter("all");

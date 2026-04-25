@@ -53,26 +53,45 @@ button:hover {
   margin-bottom: 20px;
 }
 
-.filters {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
 .filters button {
   flex: 1;
   margin: 5px;
-  background: #1e293b;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 8px;
+  font-weight: bold;
 }
 
+/* Different colors */
+.all-btn {
+  background: #64748b; /* gray */
+  color: white;
+}
+
+.pending-btn {
+  background: #facc15; /* yellow */
+  color: black;
+}
+
+.completed-btn {
+  background: #22c55e; /* green */
+  color: white;
+}
+
+/* Hover effect */
 .filters button:hover {
-  background: #334155;
+  opacity: 0.8;
 }
 
+/* Active button highlight */
+.active-filter {
+  border: 2px solid white;
+}
 .clear-btn {
   width: 100%;
   margin-top: 10px;
-  background: red;
+  background: rgb(151, 5, 5);
 }
 
 ul {
@@ -81,7 +100,7 @@ ul {
 
 li {
   list-style: none;
-  background: #1e293b;
+  background: #2366d2;
   margin: 10px 0;
   padding: 15px;
   border-radius: 10px;
@@ -96,6 +115,7 @@ li:hover {
 .completed {
   text-decoration: line-through;
   opacity: 0.6;
+  color:rgb(22, 197, 57);
 }
 
 .delete-btn {
