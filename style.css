@@ -1,33 +1,46 @@
-body {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Arial, sans-serif;
-  background: #0f172a;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #020617);
   color: white;
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  padding: 30px;
 }
 
 .container {
-  width: 400px;
+  width: 100%;
+  max-width: 500px;
+}
+
+h1 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
 input {
-  padding: 10px;
-  margin: 5px;
-  border-radius: 6px;
+  padding: 12px;
+  border-radius: 8px;
   border: none;
 }
 
 button {
-  padding: 10px 15px;
+  padding: 12px;
   background: #38bdf8;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
 }
@@ -36,13 +49,48 @@ button:hover {
   background: #0ea5e9;
 }
 
+.controls {
+  margin-bottom: 20px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.filters button {
+  flex: 1;
+  margin: 5px;
+  background: #1e293b;
+}
+
+.filters button:hover {
+  background: #334155;
+}
+
+.clear-btn {
+  width: 100%;
+  margin-top: 10px;
+  background: red;
+}
+
+ul {
+  padding: 0;
+}
+
 li {
   list-style: none;
   background: #1e293b;
   margin: 10px 0;
-  padding: 10px;
-  border-radius: 8px;
-  text-align: left;
+  padding: 15px;
+  border-radius: 10px;
+  position: relative;
+  transition: 0.3s;
+}
+
+li:hover {
+  transform: scale(1.02);
 }
 
 .completed {
@@ -51,35 +99,24 @@ li {
 }
 
 .delete-btn {
-  float: right;
+  position: absolute;
+  right: 10px;
+  top: 10px;
   background: red;
   color: white;
   border: none;
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 4px;
+  padding: 5px 8px;
+  border-radius: 5px;
 }
 
-.controls {
-  margin-bottom: 20px;
+/* 🔥 Due date highlight */
+.urgent {
+  border-left: 5px solid red;
 }
 
-.filters button {
-  margin: 5px;
-  padding: 8px;
-  background: #334155;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.filters button:hover {
-  background: #475569;
-}
-
-.clear-btn {
-  margin-top: 10px;
-  background: red;
-  color: white;
+/* 📱 Mobile responsive */
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
 }

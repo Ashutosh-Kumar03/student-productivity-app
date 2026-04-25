@@ -82,3 +82,13 @@ function clearAll() {
   saveTasks();
   renderTasks();
 }
+
+if (task.completed) {
+  li.classList.add("completed");
+}
+
+const today = new Date().toISOString().split("T")[0];
+
+if (task.date && task.date <= today && !task.completed) {
+  li.classList.add("urgent");
+}
