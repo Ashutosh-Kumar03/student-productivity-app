@@ -120,3 +120,36 @@ li:hover {
     width: 100%;
   }
 }
+
+/* Theme button */
+.theme-btn {
+  margin-bottom: 10px;
+  background: #334155;
+  color: white;
+}
+
+/* Light mode */
+.light-mode {
+  background: #f1f5f9;
+  color: black;
+}
+
+.light-mode li {
+  background: #e2e8f0;
+}
+
+.light-mode .filters button {
+  background: #cbd5e1;
+}
+
+/* Edit button */
+.edit-btn {
+  position: absolute;
+  right: 50px;
+  top: 10px;
+  background: orange;
+  color: black;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 5px;
+}

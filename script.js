@@ -41,10 +41,12 @@ function renderTasks() {
     const li = document.createElement("li");
 
     li.innerHTML = `
-      <strong>${task.text}</strong><br/>
-      <small>${task.subject} | ${task.date}</small>
-      <button class="delete-btn" onclick="deleteTask(${index})">X</button>
-    `;
+  <strong>${task.text}</strong><br/>
+  <small>${task.subject} | ${task.date}</small>
+  <button class="edit-btn" onclick="editTask(${index})">Edit</button>
+  <button class="delete-btn" onclick="deleteTask(${index})">X</button>
+`;
+
 
     if (task.completed) {
       li.classList.add("completed");
@@ -91,4 +93,22 @@ const today = new Date().toISOString().split("T")[0];
 
 if (task.date && task.date <= today && !task.completed) {
   li.classList.add("urgent");
+}
+
+function toggleTheme() {
+  document.body.classList.toggle("light-mode");
+}
+
+function editTask(index) {
+  const newText = prompt("Edit task:", tasks[index].text);
+  const newSubject = prompt("Edit subject:", tasks[index].subject);
+  const newDate = prompt("Edit date (YYYY-MM-DD):", tasks[index].date);
+
+  if (newText !== null && newText !== "") {
+    tasks[index].text = newText;
+    tasks[index].subject = newSubject;
+    tasks[index].date = newDate;
+    saveTasks();
+    renderTasks();
+  }
 }
